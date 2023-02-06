@@ -11,11 +11,34 @@
     </section>
 
     <section>
-      <textarea id="textOutput"></textarea>
+      <textarea
+        readonly
+        id="textOutput"
+      ></textarea>
     </section>
   </body>
 
   <script>
     console.log('welcome to casiopea')
+    const inputArea = document.getElementById('textInput')
+    const outputArea = document.getElementById('textOutput')
+    function validateInput(text) {
+      return text
+    }
+
+    function calculate(text) {
+      return text
+    }
+
+    function main(ev) {
+      console.log(ev.target.value)
+
+      const inputText = validateInput(ev.target.value)
+      const outputText = calculate(inputText)
+
+      outputArea.value = outputText
+    }
+
+    inputArea.addEventListener('keyup', main, false)
   </script>
 </html>
