@@ -59,7 +59,9 @@
         ma = 60 + ma
       }
 
-      text = `${ha}:${ma}`
+      minutes = '' + ma
+
+      text = `${ha}:${minutes.padStart(2, '0')}`
 
       return text
     }
