@@ -22,19 +22,39 @@
     console.log('welcome to casiopea')
     const inputArea = document.getElementById('textInput')
     const outputArea = document.getElementById('textOutput')
-    function validateInput(text) {
-      return text
-    }
 
     function calculate(text) {
+      text = text.replace('-', '+-')
+      text = text.split(/\+/)
+
+      let [ha, ma] = [0, 0]
+
+      for (const el of text) {
+        const [h, m] = el.split(':')
+
+        hi = parseInt(h)
+        mi = parseInt(m)
+
+        ha += h1
+        if (h1 < 0) {
+          ma -= mi
+        } else {
+          ma += mi
+        }
+      }
+
+      ha += ma / 60
+      ma = ma % 60
+
+      text = `${ha}:${ma}`
+
       return text
     }
 
     function main(ev) {
       console.log(ev.target.value)
 
-      const inputText = validateInput(ev.target.value)
-      const outputText = calculate(inputText)
+      const outputText = calculate(ev.target.value)
 
       outputArea.value = outputText
     }
