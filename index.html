@@ -24,8 +24,10 @@
     const outputArea = document.getElementById('textOutput')
 
     function calculate(text) {
-      text = text.replace(' ', '')
+      text = text.replace(/ /g, '')
       text = text.replace('-', '+-')
+
+      // console.log(text)
       text = text.split(/\+/)
 
       let [ha, ma] = [0, 0]
@@ -33,11 +35,16 @@
       for (const el of text) {
         const [h, m] = el.split(':')
 
+        let negative = h.includes('-')
+
         hi = parseInt(h)
         mi = parseInt(m)
 
+        // console.log(hi, h)
+        // console.log(mi, m)
+
         ha += hi
-        if (hi < 0) {
+        if (negative) {
           ma -= mi
         } else {
           ma += mi
