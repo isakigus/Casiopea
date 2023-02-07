@@ -25,7 +25,7 @@
 
     function calculate(text) {
       text = text.replace(/ /g, '')
-      text = text.replace('-', '+-')
+      text = text.replace(/-/g, '+-')
 
       // console.log(text)
       text = text.split(/\+/)
