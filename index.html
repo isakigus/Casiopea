@@ -24,6 +24,7 @@
     const outputArea = document.getElementById('textOutput')
 
     function calculate(text) {
+      text = text.replace(' ', '')
       text = text.replace('-', '+-')
       text = text.split(/\+/)
 
