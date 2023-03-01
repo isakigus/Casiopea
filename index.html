@@ -71,7 +71,9 @@
 
       const outputText = calculate(ev.target.value)
 
-      outputArea.value = outputText
+      console.log(outputText)
+
+      if (outputText.includes('NaN') == false) outputArea.value = outputText
     }
 
     inputArea.addEventListener('keyup', main, false)
